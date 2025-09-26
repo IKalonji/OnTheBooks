@@ -8,30 +8,34 @@
 <!-- Services Section -->
 <div class="services-section container mt-5">
   <h2 class="text-center mb-5">Our Services</h2>
-  <div class="service-carousel">
-    <div class="service-track">
-      <div class="service-card" *ngFor="let service of services; let i = index" (click)="flipCard(i)" (mouseleave)="unflipCard(i)" [class.flipped]="service.flipped">
-        <div class="card-inner">
-          <div class="card-front">
-            <h5 class="card-title">{{ service.title }}</h5>
-          </div>
-          <div class="card-back">
-            <p class="card-text">{{ service.description }}</p>
+  <div class="service-carousel-container">
+    <button class="scroll-btn left" (click)="scrollServicesLeft()">&lt;</button>
+    <div class="service-carousel" #serviceCarousel>
+      <div class="service-track">
+        <div class="service-card" *ngFor="let service of services; let i = index" (click)="flipCard(i)" (mouseleave)="unflipCard(i)" [class.flipped]="service.flipped">
+          <div class="card-inner">
+            <div class="card-front">
+              <h5 class="card-title">{{ service.title }}</h5>
+            </div>
+            <div class="card-back">
+              <p class="card-text">{{ service.description }}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Duplicate for seamless scroll -->
-      <div class="service-card" *ngFor="let service of services; let i = index" (click)="flipCard(i)" (mouseleave)="unflipCard(i)" [class.flipped]="service.flipped">
-        <div class="card-inner">
-          <div class="card-front">
-            <h5 class="card-title">{{ service.title }}</h5>
-          </div>
-          <div class="card-back">
-            <p class="card-text">{{ service.description }}</p>
+        <!-- Duplicate for seamless scroll -->
+        <div class="service-card" *ngFor="let service of services; let i = index" (click)="flipCard(i)" (mouseleave)="unflipCard(i)" [class.flipped]="service.flipped">
+          <div class="card-inner">
+            <div class="card-front">
+              <h5 class="card-title">{{ service.title }}</h5>
+            </div>
+            <div class="card-back">
+              <p class="card-text">{{ service.description }}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <button class="scroll-btn right" (click)="scrollServicesRight()">&gt;</button>
   </div>
 </div>
 

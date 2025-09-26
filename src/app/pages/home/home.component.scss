@@ -9,19 +9,23 @@
 $primary-color: #007bff;
 
 // Services Section Carousel
-.service-carousel {
-  overflow: hidden;
+.service-carousel-container {
   position: relative;
-  width: 100%;
+}
+
+.service-carousel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .service-track {
   display: flex;
-  width: calc(280px * 12); // 280px card width * 12 cards (6 services * 2 for seamless scroll)
+  width: calc(280px * 12);
   animation: serviceCarousel 60s linear infinite;
 }
 
-.service-carousel:hover .service-track {
+.service-carousel-container:hover .service-track {
   animation-play-state: paused;
 }
 
@@ -31,6 +35,7 @@ $primary-color: #007bff;
   perspective: 1000px;
   margin: 0 15px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .card-inner {
@@ -60,8 +65,8 @@ $primary-color: #007bff;
 }
 
 .card-front {
-  background-color: $primary-color;
-  color: white;
+  background-color: #dad2c7;
+  color: black;
 }
 
 .card-back {

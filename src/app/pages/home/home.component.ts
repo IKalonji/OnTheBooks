@@ -7,6 +7,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class HomeComponent {
   @ViewChild('articleCarousel') articleCarousel!: ElementRef;
+  @ViewChild('serviceCarousel') serviceCarousel!: ElementRef;
 
   services = [
     { title: 'Tax Preparation', description: 'Individual and business tax preparation services.', flipped: false },
@@ -35,6 +36,14 @@ export class HomeComponent {
 
   scrollRight() {
     this.articleCarousel.nativeElement.scrollBy({ left: 300, behavior: 'smooth' });
+  }
+
+  scrollServicesLeft() {
+    this.serviceCarousel.nativeElement.scrollBy({ left: -300, behavior: 'smooth' });
+  }
+
+  scrollServicesRight() {
+    this.serviceCarousel.nativeElement.scrollBy({ left: 300, behavior: 'smooth' });
   }
 
   flipCard(index: number) {
