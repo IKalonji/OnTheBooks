@@ -1,0 +1,54 @@
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+// Image Stack
+.image-stack {
+  position: relative;
+  height: 350px;
+}
+
+.stacked-img {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.stacked-img:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.img-1 {
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+}
+
+.img-2 {
+  bottom: 0;
+  right: 0;
+  width: 60%;
+}
+
+// Blockquote
+.blockquote {
+  font-size: 1.25rem;
+  font-style: italic;
+  border-left: 5px solid #007bff;
+  padding-left: 20px;
+}
+
+// Team Section
+.team-member img {
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.team-member img:hover {
+  transform: scale(1.1);
+}

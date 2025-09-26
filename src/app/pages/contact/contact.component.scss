@@ -1,0 +1,47 @@
+.cal-mockup {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cal-header {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cal-body {
+  padding: 1rem;
+}
+
+.cal-days {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.cal-dates {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.date {
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.date.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.cal-footer {
+  padding: 1rem;
+  text-align: right;
+  background-color: #f8f9fa;
+}

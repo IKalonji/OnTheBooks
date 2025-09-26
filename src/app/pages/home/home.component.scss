@@ -1,0 +1,180 @@
+.hero-section {
+  background-image: url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 0;
+}
+
+// Color Palette
+$primary-color: #007bff;
+
+// Services Section Carousel
+.service-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.service-track {
+  display: flex;
+  width: calc(280px * 12); // 280px card width * 12 cards (6 services * 2 for seamless scroll)
+  animation: serviceCarousel 60s linear infinite;
+}
+
+.service-carousel:hover .service-track {
+  animation-play-state: paused;
+}
+
+.service-card {
+  width: 250px;
+  height: 150px;
+  perspective: 1000px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.service-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-front {
+  background-color: $primary-color;
+  color: white;
+}
+
+.card-back {
+  background-color: #f8f9fa;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+@keyframes serviceCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-280px * 6));
+  }
+}
+
+
+// Articles Section
+.article-carousel-container {
+  position: relative;
+}
+
+.article-carousel {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.scroll-btn.left {
+  left: -20px;
+}
+
+.scroll-btn.right {
+  right: -20px;
+}
+
+.articles-section .card {
+  transition: transform 0.3s;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.articles-section .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.articles-section .btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+// Clients and Integrations Section
+.clients-section {
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-carousel {
+  display: flex;
+  width: 200%;
+  animation: carousel 30s linear infinite;
+}
+
+.logo-track {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #495057;
+}
+
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+// CTA Section
+.cta-section {
+  background-color: $primary-color;
+}
+
+.cta-section .btn-primary {
+  background-color: white;
+  color: $primary-color;
+  border-color: white;
+  font-weight: bold;
+}
