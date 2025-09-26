@@ -199,3 +199,14 @@ $primary-color: #007bff;
     animation: serviceCarousel 30s linear infinite;
   }
 }
+
+[appScrollAnimation] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[appScrollAnimation].visible {
+  opacity: 1;
+  transform: translateY(0);
+}

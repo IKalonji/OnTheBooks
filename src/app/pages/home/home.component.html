@@ -6,7 +6,7 @@
 </div>
 
 <!-- Services Section -->
-<div class="services-section container mt-5">
+<div class="services-section container mt-5" appScrollAnimation>
   <h2 class="text-center mb-5">Our Services</h2>
   <div class="service-carousel-container">
     <button class="scroll-btn left" (click)="scrollServicesLeft()">&lt;</button>
@@ -40,7 +40,7 @@
 </div>
 
 <!-- Articles Section -->
-<div class="articles-section container mt-5">
+<div class="articles-section container mt-5" appScrollAnimation>
   <h2 class="text-center mb-5">Latest Articles</h2>
   <div class="article-carousel-container">
     <button class="scroll-btn left" (click)="scrollLeft()">&lt;</button>
@@ -65,7 +65,7 @@
 <app-article-modal *ngIf="isArticleModalOpen" [title]="selectedArticle.title" [content]="selectedArticle.content" (close)="closeArticleModal()"></app-article-modal>
 
 <!-- Clients and Integrations Section -->
-<div class="clients-section container mt-5">
+<div class="clients-section container mt-5" appScrollAnimation>
   <h2 class="text-center mb-5">Our Clients and Integrations</h2>
   <div class="logo-carousel">
     <div class="logo-track">
@@ -90,7 +90,7 @@
 </div>
 
 <!-- CTA Section -->
-<div class="cta-section text-center text-white mt-5 p-5">
+<div class="cta-section text-center text-white mt-5 p-5" appScrollAnimation>
   <div class="container">
     <h2>Ready to Get Your Books in Order?</h2>
     <p class="lead">Schedule a free consultation with one of our experts today.</p>

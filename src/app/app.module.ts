@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ArticleModalComponent } from './components/article-modal/article-modal.component';
+import { ScrollAnimationDirective } from './directives/scroll-animation.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ArticleModalComponent } from './components/article-modal/article-modal.
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ArticleModalComponent
+    ArticleModalComponent,
+    ScrollAnimationDirective
   ],
   imports: [
     BrowserModule,
