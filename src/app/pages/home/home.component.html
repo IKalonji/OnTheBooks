@@ -42,63 +42,13 @@
     <button class="scroll-btn left" (click)="scrollLeft()">&lt;</button>
     <div class="article-carousel" #articleCarousel>
       <div class="row flex-nowrap">
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4" *ngFor="let article of articles; let i = index">
           <div class="card h-100">
-            <img src="https://picsum.photos/300/200?random=1" class="card-img-top" alt="Article Image">
+            <img src="https://picsum.photos/300/200?random={{ i + 1 }}" class="card-img-top" alt="Article Image">
             <div class="card-body">
-              <h5 class="card-title">Understanding Tax Deductions</h5>
-              <p class="card-text">Learn about common tax deductions for small businesses.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="https://picsum.photos/300/200?random=2" class="card-img-top" alt="Article Image">
-            <div class="card-body">
-              <h5 class="card-title">Accurate Bookkeeping</h5>
-              <p class="card-text">Why accurate bookkeeping is crucial for your business.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="https://picsum.photos/300/200?random=3" class="card-img-top" alt="Article Image">
-            <div class="card-body">
-              <h5 class="card-title">Choosing Accounting Software</h5>
-              <p class="card-text">A guide to choosing the best accounting software.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="https://picsum.photos/300/200?random=4" class="card-img-top" alt="Article Image">
-            <div class="card-body">
-              <h5 class="card-title">Preparing for Tax Season</h5>
-              <p class="card-text">Tips and tricks for a stress-free tax season.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="https://picsum.photos/300/200?random=5" class="card-img-top" alt="Article Image">
-            <div class="card-body">
-              <h5 class="card-title">Financial Statements Explained</h5>
-              <p class="card-text">Understand the key financial statements for your business.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="https://picsum.photos/300/200?random=6" class="card-img-top" alt="Article Image">
-            <div class="card-body">
-              <h5 class="card-title">Managing Cash Flow</h5>
-              <p class="card-text">Effective strategies for managing your business's cash flow.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
+              <h5 class="card-title">{{ article.title }}</h5>
+              <p class="card-text">{{ article.shortDescription }}</p>
+              <button class="btn btn-primary" (click)="openArticleModal(article)">Read More</button>
             </div>
           </div>
         </div>
@@ -107,6 +57,8 @@
     <button class="scroll-btn right" (click)="scrollRight()">&gt;</button>
   </div>
 </div>
+
+<app-article-modal *ngIf="isArticleModalOpen" [title]="selectedArticle.title" [content]="selectedArticle.content" (close)="closeArticleModal()"></app-article-modal>
 
 <!-- Clients and Integrations Section -->
 <div class="clients-section container mt-5">
